@@ -16,6 +16,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: |
+        cd OracleDatabase/SingleInstance/dockerfiles
         ./buildDockerImage.sh -v 18.4.0 -x
         docker tag oracle/database:18.4.0-xe mayankbansal0105/database:18.4.0
          docker login -u mayankbansal0105 -p 5Vnzur_276332
